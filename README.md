@@ -1,2 +1,2 @@
 # NewsPortal
-Django project
+News Portal on Django (JetBrains Academy's project)
