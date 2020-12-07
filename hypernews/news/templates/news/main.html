@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }} - Home{% endblock title %}
+{% block content %}
+    <h2>Hyper news</h2>
+    <form action="/news/" method="GET">
+        {% csrf_token %}
+        <label for="search_id">
+        <input id="search_id" type="text" name="q" size="60"><br><br>
+        </label>
+        <button type="submit">Search</button>
+    </form>
+    {% for i, j in grouped_by_day.items %}
+        <h4>{{ i }}</h4>
+        <ul>
+        {% for a in j %}
+            <li><a href="/news/{{ a.link }}/">{{ a.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    <p><a href="/news/create/">Add news</a></p>
+{% endblock content %}

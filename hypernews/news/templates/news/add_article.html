@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }} - Add article{% endblock %}
+{% block content %}
+    <h2>Add article</h2>
+    <form action="/news/create/" method="POST">
+        {% csrf_token %}
+        <label for="title_id">Title</label><br>
+        <input id="title_id" type="text" name="title" size="60"><br><br>
+        <label for="text_id">Text:</label><br>
+        <input id="text_id" type="text" name="text" size="60"><br><br>
+        <button type="submit">Create</button>
+    </form>
+    <p><a href="/news/">News</a></p>
+    <!-- Open link in new tab -->
+    <!-- <a target="_blank" target="_blank" href="/news/">News</a> -->
+{% endblock %}

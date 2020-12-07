@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ block.super }} - News{% endblock %}
+{% block content %}
+    {% if article %}
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.created }}</p>
+        <p>{{ article.text }}</p>
+    {% else %}
+        <h2>No news</h2>
+    {% endif %}
+    <a href="/news/">News</a>
+    <!-- Open link in new tab -->
+    <!-- <a target="_blank" target="_blank" href="/news/">News</a> -->
+{% endblock %}
